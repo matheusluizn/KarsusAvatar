@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" lang="pt_BR">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png"> 
+	<title>Iniciando sua Aventura | O Avatar de Karsus</title>
+
+	<link rel="stylesheet" type="text/css" href="./styles/start.css">
+
+	<style type="text/css">
+	@font-face{
+		font-family:'Gamefont';
+		src:url('./assets/gameFont1.ttf');
+		text-shadow: 2px 2px 2px 2px green;
+	}
+
+	*{
+		font-family:'Gamefont';
+		padding:0;
+		margin:0;
+	}
+
+
+	.tela {
+		min-height:100vh;
+	}
+
+	#identificação{
+		background-color:black;
+		color:white;
+	}
+
+	/* TELA INICIAL DE PRESS START */
+	#telaInicial{
+		display:none;
+		background-image:url('./img/startScreen.jpg');
+		background-size:cover;
+		justify-content:space-around;
+
+		background-position:center;
+		background-repeat: no-repeat;
+		flex-direction:column;
+		align-items:center;
+	}
+
+	#telaInicial img{
+		width:50vw;
+		background-color:rgba(0,0,0,0.0);
+		border-radius:0;
+		padding:0 ;
+
+	}
+
+	</style>
+
+</head>
+<body>
+	<div id="identificação" class="tela">
+		<form>
+			<h1> Vamos começar sua Aventura!</h1>
+			<h1>Primeiro digite seu nome</h1>
+			<h3>(Esse não será o nome do seu personagem!)</h3>
+
+			<form>
+				<input type="text" id="nomeJogador" name="nomeJogador">
+				<input type="button" Value='Esse é meu nome!' onclick="guardarNome()">
+			</form>
+		</form>
+		
+	</div>
+
+	<div id="telaInicial" class="tela">
+
+		<img src="./img/logo.png">
+		
+		<audio id="abertura" src="./assets/musicas/abertura.mp3"></audio>		
+	</div>
+
+	<div div="introdução">
+		
+	</div>
+
+
+<script type="text/javascript">
+
+	
+	function guardarNome(){
+
+		let n = document.getElementById('nomeJogador').value;
+	
+		if(n.length == 0){ 
+			console.log('Você não escreveu nada')
+		} else {
+			window.localStorage.setItem('nome', n); 
+			document.getElementById('identificação').style.display = 'none';
+			telaInicial();
+		}
+		
+	}
+
+	function telaInicial(){
+		document.getElementById('telaInicial').style.display = 'flex';
+		// Música de Abertura
+		document.getElementById('abertura').loop = 'true';
+		document.getElementById('abertura').play();
+		// Escurecimento Tela CSS JS
+		let contShadow = 0;
+ 		let tela = document.getElementById('telaInicial');
+ 		var intervalo = setInterval(()=>{
+ 		if (contShadow >= 0.8){
+ 		tela.style.boxShadow = 'inset 0 0 0 1000px rgba(0,0,0,'+contShadow+')';
+ 		clearInterval(intervalo);
+ 			} else {
+ 		tela.style.boxShadow = 'inset 0 0 0 1000px rgba(0,0,0,'+contShadow+')';
+ 		contShadow += 0.01;
+ 		}}, 100);
+	}
+
+
+	
+
+</script>
+
+</body>
+</html>
