@@ -4,6 +4,11 @@
 	<meta charset="utf-8" lang="pt_BR">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png"> 
+
+
+  	<link href="./dist/rpgui.css" rel="stylesheet" type="text/css" >
+	<script src="./dist/rpgui.js"></script>
+
 	<title>Iniciando sua Aventura | O Avatar de Karsus</title>
 
 	<link rel="stylesheet" type="text/css" href="./styles/start.css">
@@ -16,7 +21,6 @@
 	}
 
 	*{
-		font-family:'Gamefont';
 		padding:0;
 		margin:0;
 	}
@@ -29,22 +33,46 @@
 	#identificação{
 		background-color:black;
 		color:white;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
 	}
+
+	#identificação h1, h3{
+		font-size: 1.5vw;
+
+	}
+
+	#identificação form{
+		display:flex;
+		flex-direction:column;
+	}
+
+		#identificação button{
+			color:white;
+			text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+		}
 
 	/* TELA INICIAL DE PRESS START */
 	#telaInicial{
 		display:none;
 		background-image:url('./img/startScreen.jpg');
 		background-size:cover;
-		justify-content:space-around;
-
 		background-position:center;
 		background-repeat: no-repeat;
+		justify-content:space-between;
+
 		flex-direction:column;
 		align-items:center;
 	}
 
+	#telaInicial div{
+		text-align:center;
+	}
+
 	#telaInicial img{
+		margin-top:5vw;
 		width:50vw;
 		background-color:rgba(0,0,0,0.0);
 		border-radius:0;
@@ -52,32 +80,53 @@
 
 	}
 
+	.startButton{
+		background:none;
+		border:none;
+		color:white;
+		text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+		padding: 5vw;
+	}
+	.startButton{
+		cursor:auto;
+	}
+
 	</style>
 
 </head>
 <body>
-	<div id="identificação" class="tela">
-		<form>
-			<h1> Vamos começar sua Aventura!</h1>
+	<div id="identificação" class="tela rpgui-content">
+		
+			<h1> Vamos começar sua aventura em <b style="color:yellow;"> Karsus Avatar</b>!</h1>
 			<h1>Primeiro digite seu nome</h1>
 			<h3>(Esse não será o nome do seu personagem!)</h3>
 
 			<form>
 				<input type="text" id="nomeJogador" name="nomeJogador">
-				<input type="button" Value='Esse é meu nome!' onclick="guardarNome()">
+				<button style="width:100%" class="rpgui-button" type="button" onclick="guardarNome()">Esse é meu nome!</button>
 			</form>
 		</form>
 		
 	</div>
 
-	<div id="telaInicial" class="tela">
-
+	<div id="telaInicial" class="tela rpgui-content">
+		<div>
+		<p>POR MATHEUS LUIZ® </p>
 		<img src="./img/logo.png">
+		</div>
+
+	
+		<button onclick="introducao()" class="startButton">CLIQUE AQUI PARA COMEÇAR</button>
 		
-		<audio id="abertura" src="./assets/musicas/abertura.mp3"></audio>		
+
+		<audio class="audio" id="abertura" src="./assets/musicas/abertura.mp3"></audio>		
 	</div>
 
-	<div div="introdução">
+	<div id="introdução">
+		
+	</div>
+
+	<div id="escolhaPersonagem">
 		
 	</div>
 
@@ -99,7 +148,13 @@
 		
 	}
 
+	function piscarElemento(elemento, tempo){
+		setInterval(()=>{ elemento.hidden = !elemento.hidden }, tempo);
+	}
+
 	function telaInicial(){
+		document.querySelector('.startButton').hidden = true;
+
 		document.getElementById('telaInicial').style.display = 'flex';
 		// Música de Abertura
 		document.getElementById('abertura').loop = 'true';
@@ -115,6 +170,15 @@
  		tela.style.boxShadow = 'inset 0 0 0 1000px rgba(0,0,0,'+contShadow+')';
  		contShadow += 0.01;
  		}}, 100);
+	
+ 		setTimeout(()=>{
+ 				piscarElemento(document.querySelector('.startButton'), 1000);
+ 		},2000);
+	}
+
+	function introducao(){
+		document.querySelector('.audio').pause();
+		document.getElementById('telaInicial').style.display = 'none';
 	}
 
 
