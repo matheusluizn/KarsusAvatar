@@ -91,6 +91,156 @@
 		cursor:auto;
 	}
 
+	/* TELA INICIAL DE INTRODUÇÃO */
+	#introducao{
+		display:none;
+		background-image:url('./img/introImgs/toril.jpg');
+		background-size:cover;
+		background-position:center;
+		background-repeat: no-repeat;
+		background-color:black;
+		flex-direction:column;
+		justify-content:space-between;
+		align-items:center;
+	}
+
+	.textCase{
+		margin-top:5vh;
+		width:100%;
+		height:100%;
+		position:bottom;
+		align-items:center;
+
+		display:flex;
+		justify-content:space-around;
+		
+	}
+
+	.textBox{
+		min-width:100%;
+		max-width:100%;
+		min-height:15vw;
+		font-size:13px;
+	}
+
+	.telaIntrodução{
+		min-height:60%;
+		align-items:center;
+		display:flex;
+		justify-content:space-around;
+	}
+
+	.imgIntro{
+		width:80%;
+		border-radius:50px;
+	}
+
+
+
+
+
+	#escolhaPersonagem{
+		display:none;
+		flex-direction:column;
+		align-items:center;
+		background-image:url('./img/introImgs/charSelect.jpg');
+		background-size:cover;
+		background-repeat: no-repeat;
+
+	}
+
+
+	
+
+	.caixaPersonagem{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		
+	}
+
+	.caixaPersonagem div{
+		text-align:center;
+		margin: 0 20vw;
+	}
+
+	.caixaPersonagem table{
+		margin: 0 5vw;
+	}
+
+	
+
+	.escolhendoChar{
+		display:flex;
+		justify-content:center;
+
+	}
+
+	.personagem{
+		display:flex;
+		
+	}
+	.card{
+		height:40vw;
+		width:60vw;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		border-right:solid 3px black;
+	}
+
+	.card h1{
+		font-size: 15px;
+
+	}
+
+	.card p{
+		font-size: 10px;
+		text-align:center;
+	}
+
+	#imgChar{
+		width: 180px !important;
+		border: 7px solid green;
+		border-radius: 100%;
+	}
+
+	#imgChar2{
+		width: 180px !important;
+		border: 7px solid blue;
+		border-radius: 100%;
+	}
+
+	#imgChar3{
+		width: 180px !important;
+		border: 7px solid red;
+		border-radius: 100%;
+	}
+
+	.tabelaChar{
+		
+		color:white;
+		text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+		float:left;
+		position:static !important;
+		align-items:center;
+	}
+
+	.botaoChar button{
+		color:white;
+		text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	}
+
+
+
+	.zion{
+		display:none;
+	}
+
+	.abigail{
+		display:none;
+	}
+
 	</style>
 
 </head>
@@ -109,6 +259,9 @@
 		
 	</div>
 
+
+
+
 	<div id="telaInicial" class="tela rpgui-content">
 		<div>
 		<p>POR MATHEUS LUIZ® </p>
@@ -122,22 +275,339 @@
 		<audio class="audio" id="abertura" src="./assets/musicas/abertura.mp3"></audio>		
 	</div>
 
-	<div id="introdução">
+
+
+	<div id="introducao" class="tela rpgui-content">
 		
+		<div class="telaIntrodução">
+				<img class="imgIntro">
+		</div>
+
+		<div class="textCase">
+		   <div  class="rpgui-container framed textBox">
+				<p id="textoIntrodução"></p>
+		   </div>
+		</div>
+
+		<audio class="audio" id="nzoth" src="./assets/musicas/yoggSaron.mp3"></audio>
+		<audio class="audio" id="introdução" src="./assets/musicas/introdução.mp3"></audio>
 	</div>
 
-	<div id="escolhaPersonagem">
-		
-	</div>
+	
+<div id="escolhaPersonagem" class="escolhendoChar rpgui-content">
 
+	<div class="botaoChar">
+			<button onclick="verBruxo('.electra','.abigail','.zion')" class="rpgui-button">Bruxo 1</button>
+			<button onclick="verBruxo('.abigail','.electra','.zion')" class="rpgui-button">Bruxo 2</button>
+			<button onclick="verBruxo('.zion','.abigail','.electra')" class="rpgui-button">Bruxo 3</button>
+			<button onclick="escolherChar()" class="rpgui-button">Quero escolher meu bruxo!</button>
+	</div>
+		
+	<div class="personagem electra">	
+		<div class="card rpgui-container framed" style="position:static;" >
+			<img id='imgChar' src="./img/personagens/portrait1.png">
+			<h1>Electra Soulton</h1>
+			<p> Electra é uma bruxa que fez o pacto com N'Zoth por questão de sobrevivência. Ela é orfã desde criança, e ao entrar em contato com bruxos que estavam na mesmo situação escolheu seguir o mesmo caminho que seus colegas. Ela cresceu vivendo de forma clandestina e além de desenvolver poderes mágicos evoluiu em agilidade e na utilização de flechas para combate. É uma mulher séria, lógica e altamente vingativa. </p>
+		</div>	
+
+		<table class="tabelaChar rpgui-container framed">
+				<tr>
+					<th colspan="2">Stats</th>
+				</tr>
+				<tr>
+				  <td>Força</td>
+				  <td>40</td>
+				</tr>
+				<tr>
+				  <td>Agilidade</td>
+				  <td>70</td>
+				</tr>
+				<tr>
+				  <td>Inteligência</td>
+				  <td>60</td>
+				</tr>
+				<tr>
+				  <td>Sorte</td>
+				  <td>30</td>
+				</tr>
+				<tr>
+					<p></p>
+				</tr>
+				<tr>
+					<th style="padding-top: 20px;" colspan="2">Atributo Principal:</th>
+				</tr>
+				<tr>
+					<th colspan="2" style="color:#7FB800; font-size:20px; padding: 20px 0;" >Agilidade </th>
+				</tr>
+				<tr>
+					<th colspan="2">Artefato do Bruxo:</th>
+				</tr>
+				<tr>
+					<td colspan="2" style="display:flex; justify-content:center; "><img style="width: 80px; padding-top: 20px; " src="./img/personagens/hermes1.png"></td>
+				</tr>
+
+				<tr>
+					<td style="padding-top: 10px;" colspan="2">Sandálias de Hermes</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-top: 10px;" ><p>Uso: Fique invunerável <br> por 2 turnos</p></td>
+				</tr>
+				
+			</table>
+
+		</div>	
+
+
+		<div class="personagem abigail">	
+		<div class="card rpgui-container framed" style="position:static;" >
+			<img id='imgChar2' src="./img/personagens/portrait3.png">
+			<h1>Abigail Labyrinth</h1>
+			<p> Abigail é proveniente de uma família de grandes magos. Seus pais eram arcanistas exímios capazes de controlar com propriedade o elemento do fogo. Abigail seguiu a mesma linha, estudando com muita fome sobre magias e o mundo dos feitiços. Nessa fome de conhecimento, ela acabou conhecendo os bruxos e seu contato com seres de outros planos. Ela então decidiu fazer o pacto com N'Zoth, e desde então presta serviços ao deus em troca de conhecimento. É uma mulher extremamente inteligente, mas é ranzinza e orgulhosa. </p>
+		</div>	
+
+		<table class="tabelaChar rpgui-container framed">
+				<tr>
+					<th colspan="2">Stats</th>
+				</tr>
+				<tr>
+				  <td>Força</td>
+				  <td>30</td>
+				</tr>
+				<tr>
+				  <td>Agilidade</td>
+				  <td>50</td>
+				</tr>
+				<tr>
+				  <td>Inteligência</td>
+				  <td>90</td>
+				</tr>
+				<tr>
+				  <td>Sorte</td>
+				  <td>30</td>
+				</tr>
+				<tr>
+					<p></p>
+				</tr>
+				<tr>
+					<th style="padding-top: 20px;" colspan="2">Atributo Principal:</th>
+				</tr>
+				<tr>
+					<th colspan="2" style="color:blue; font-size:20px; padding: 20px 0;" >Inteligência </th>
+				</tr>
+				<tr>
+					<th colspan="2">Artefato do Bruxo:</th>
+				</tr>
+				<tr>
+					<td colspan="2" style="display:flex; justify-content:center; "><img style="width: 80px; padding-top: 20px; " src="./img/personagens/cloak1.png"></td>
+				</tr>
+
+				<tr>
+					<td style="padding-top: 10px;" colspan="2">Capa da Invisibilidade</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-top: 10px;" ><p>Uso: Fique invunerável <br> por 1 turno e cause<br> dano bônus no próximo ataque</p></td>
+				</tr>
+				
+			</table>
+
+		</div>	
+
+		<div class="personagem zion">	
+		<div class="card rpgui-container framed" style="position:static;" >
+			<img id='imgChar3' src="./img/personagens/portrait2.png">
+			<h1>Zion Jinx</h1>
+			<p> Zion é um rapaz que proveio de família nobre. Seus pais eram aristrocratas altamente renomados e eram reconhecidos em qualquer lugar da cidade onde moravam. Porém, secretamente, eles eram devotos de N'Zoth. Em troca de se tornar fértil, a mãe de Zion fez um pacto que concede a vida do filho como devoto do Patrono dos bruxos. Além de ser um bruxo exímio, ele desenvolveu habilidades com sua espada! É uma pessoa emocional, impulsiva e ingênua. </p>
+		</div>	
+
+		<table class="tabelaChar rpgui-container framed">
+				<tr>
+					<th colspan="2">Stats</th>
+				</tr>
+								<tr>
+				  <td>Força</td>
+				  <td>80</td>
+				</tr>
+				<tr>
+				  <td>Agilidade</td>
+				  <td>40</td>
+				</tr>
+				<tr>
+				  <td>Inteligência</td>
+				  <td>40</td>
+				</tr>
+				<tr>
+				  <td>Sorte</td>
+				  <td>40</td>
+				</tr>
+				<tr>
+					<p></p>
+				</tr>
+				<tr>
+					<th style="padding-top: 20px;" colspan="2">Atributo Principal:</th>
+				</tr>
+				<tr>
+					<th colspan="2" style="color:red; font-size:20px; padding: 20px 0;" >Força</th>
+				</tr>
+				<tr>
+					<th colspan="2">Artefato do Bruxo:</th>
+				</tr>
+				<tr>
+					<td colspan="2" style="display:flex; justify-content:center; "><img style="width: 80px; padding-top: 20px; " src="./img/personagens/excalibur1.png"></td>
+				</tr>
+
+				<tr>
+					<td style="padding-top: 10px;" colspan="2">Excalibur</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-top: 10px;" ><p>Uso: Faça 1 ataque <br> devastador</p></td>
+				</tr>
+				
+			</table>
+
+		</div>	
+
+
+		<audio class="audio" id="escolheChar" src="./assets/musicas/escolheChar.mp3"></audio>
+
+	</div>
 
 <script type="text/javascript">
+
+	var listaChar = ['electra','abigail','zion'];
+	
+	if(window.localStorage.getItem('nome') != undefined){
+			document.getElementById('identificação').style.display = 'none';
+			telaInicial();
+		} else{
+			document.getElementById('identificação').style.display = 'flex';
+		}
+
+	var textoCont = 0;
+
+	var textoIntrodução1 = 'Seja bem vindo ao planeta Toril, '+ window.localStorage.getItem('nome')+'. Nós, habitantes desse universo estamos sofrendo bastante. Eu, criador deste universo, prevejo uma crise eminente gerada pela ganância de um homem. Esse ser está tentando mexer com o tecido mágico que compõe toda a energia vital dos seres vivos de nosso universo.';
+
+	var textoIntrodução2 = 'Este homem é um Archimago, e deseja utilizar todo o conhecimento escondido na cidade de Netheril para roubar os poderes dos deuses e se tornar o mago mais poderoso do mundo.'
+	//var textoIntrodução2 = 'Pactos podem ocorrer por necessidade, fome de conhecimento ou por poderes herdados hereditariamente.';
+
+	var textoIntrodução3 = 'Para combater esse ser maligno convoquei-lhe e selecionei 3 bruxos altamente poderosos para que sejam guiados por você.';
+	//var textoIntrodução3 = 'Os pactos são feitos juntamente com entidades extremamente poderosas denominadas Patronos. Nesse pacto elas concedem um pouco de seu poder e sabedoria em troca de respeito e servitude eterna.';
+	var textoIntrodução4 = window.localStorage.getItem('nome')+ ', eu clamo a ti que escolha seu bruxo preferido e acabe com as atrocidades que virão!';
+
+	var textoIntrodução5 = "Não se preocupe! Antes da nossa aventura começar eu vou te levar ao deus Patrono dos Bruxos, N'Zoth, e lá todas as suas dúvidas sobre este mundo serão sanadas. Muito obrigado pela ajuda,"+window.localStorage.getItem('nome')+'!'; 
+
+
+	var textoNzoth1 = 'Mortal imundo! O que faz no meu plano, ser inferior?'
+
+	var textoNzoth2 = 'Espere! Você deve ser o ser que o criador deste universo patético enviou para parar os planos malignos de Karsus, não é mesmo?'
+	var textoNzoth3 = 'Seu nome é '+ window.localStorage.getItem('nome')+ ', se eu não me engano. Quer dizer, EU NUNCA ME ENGANO! HAHAHAH!'
+
+	var textoNzoth4 = 'Então, ser pútrido de abjeta fedentida, eu irei explicar os detalhes sobre o vasto mundo de Toril e cidade mágica de Netheril!';
+
+	var textoNzoth5 = 'Netheril é uma cidade flutuante que se situa no norte do continente de Faerûm.';
+
+	var textoNzoth6 = 'Nessa cidade existem hierarquias que são definidas pelas suas habilidades em magia, e vários magos prepotentes disputam em combates até chegar ao topo. O campeão permanente e dono da cidade é o Archimago Karsus.';
+
+	var textoNzoth7 = 'Karsus é um ser humano extremamente formidável, e está utilizando todo o ouro gerado pela cidade para criar um feitiço capaz de robar o poder dos deuses. Para manter a hierarquia firme ele promove batalhas de magia sazonalmente, e é aí que o seu papel se desenvolve.';
+	var textoNzoth8 = window.localStorage.getItem('nome')+', sua missão é se infiltrar neste torneio e derrotar o grande mago Karthus. Ao derrotá-lo. Você terá em seu arsenal 3 de meus lacaios bruxos mais devotos, e assim poderá pedir meu auxílio sempre quando necessário.'; 
+	var textoNzoth9 = 'A seguir escolha entre os bruxos Abigail, Zion e Electra. Os 3 são bruxos formidáveis e com sua ajuda poderão dar conta de qualquer serviço, mas cuidado, cada um carrega uma arma especial e característica diferente. Escolha Sabiamente!';
+
+
+	// BOTAO DE TROCA DE BRUXOS
+	function verBruxo(aparecer,ba,bb){
+		 document.querySelector(aparecer).style.display = 'flex';
+		document.querySelector(ba).style.display = 'none';
+		 document.querySelector(bb).style.display = 'none';
+	}
+
+	//BOTAO ESCOLHER PERSONAGEM
+	function escolherChar(){
+		var char = prompt('Escolha entre os bruxos 1, 2 ou 3! Você também pode digitar o nome deles')
+		if (char == 1){
+			window.localStorage.setItem('char', 'electra')
+			window.location.replace("etapa2.html")
+		}else  if (char == 2){
+			window.localStorage.setItem('char', 'abigail')
+			window.location.replace("etapa2.html")
+		} else  if (char == 3){
+			window.localStorage.setItem('char', 'zion')
+			window.location.replace("etapa2.html")
+		} else if(typeof char == 'string'){
+			  if(listaChar.includes(char.toLowerCase())){ 
+					window.localStorage.setItem('char',char.toLowerCase())
+					window.location.replace("etapa2.html");
+				} else alert('Você digitou errado! Por favor digite novamente o bruxo escolhido!')
+		} else{
+			alert('Você digitou errado! Por favor digite novamente o bruxo escolhido!')
+		}
+	}
+
+	function limparTexto(){
+		document.querySelector('#textoIntrodução').innerHTML = '';
+	}
+
+	function escreverDevagar(idElemento, intervalo, texto) {
+	let ts = texto.split('');
+	var d = document.getElementById(idElemento);
+	var intervalow = setInterval(()=>{
+		if(!ts.length){
+			clearInterval(intervalow)
+			setTimeout(()=>{d.innerHTML = ''; return next();}, 4000);
+		} else{
+			var char = ts.shift();
+			d.innerHTML += char;
+		}
+	}, intervalo);
+	
+}
+function next(){
+	textoCont++;
+	if (textoCont == 1){
+		escreverDevagar('textoIntrodução', 70, textoIntrodução2)
+	} else if (textoCont == 2){
+		escreverDevagar('textoIntrodução', 70, textoIntrodução3)
+	} else if (textoCont == 3){
+		escreverDevagar('textoIntrodução', 70,textoIntrodução4)
+	} else if (textoCont == 4){
+		escreverDevagar('textoIntrodução', 70,textoIntrodução5)
+	} else if (textoCont == 5){
+		pausarAudios('#introdução');
+		loopMusica('#nzoth');
+		document.getElementById('introducao').style.backgroundImage = "url('./img/introImgs/nzoth.jpg')";
+		escreverDevagar('textoIntrodução', 70,textoNzoth1);
+	} else if (textoCont == 6){
+		escreverDevagar('textoIntrodução', 70,textoNzoth2)
+	} else if (textoCont == 7){
+		escreverDevagar('textoIntrodução', 70,textoNzoth3)
+	} else if (textoCont == 8){
+		escreverDevagar('textoIntrodução', 70,textoNzoth4)
+	} else if (textoCont == 9){
+		escreverDevagar('textoIntrodução', 70,textoNzoth5)
+	} else if (textoCont == 10){
+		escreverDevagar('textoIntrodução', 70,textoNzoth6)
+	} else if (textoCont == 11){
+		escreverDevagar('textoIntrodução', 70,textoNzoth7)
+	} else if (textoCont == 12){
+		escreverDevagar('textoIntrodução', 70,textoNzoth8)
+	} else if (textoCont == 13){
+		escreverDevagar('textoIntrodução', 70,textoNzoth9)
+	} else if (textoCont == 14){
+		escolhaPersonagem();
+	}
+}
+
+	function loopMusica(id){
+		document.querySelector(id).loop = 'true';
+		document.querySelector(id).play();
+	}
+
+	function pausarAudios(id){
+		document.querySelector(id).pause();
+	}
 
 	
 	function guardarNome(){
 
 		let n = document.getElementById('nomeJogador').value;
-	
 		if(n.length == 0){ 
 			console.log('Você não escreveu nada')
 		} else {
@@ -152,13 +622,19 @@
 		setInterval(()=>{ elemento.hidden = !elemento.hidden }, tempo);
 	}
 
+
+	function proximoDiv(ant, prox){
+		document.getElementById(ant).style.display = 'none';
+		document.getElementById(prox).style.display = 'flex';
+
+	}
+
+
 	function telaInicial(){
 		document.querySelector('.startButton').hidden = true;
-
 		document.getElementById('telaInicial').style.display = 'flex';
 		// Música de Abertura
-		document.getElementById('abertura').loop = 'true';
-		document.getElementById('abertura').play();
+		loopMusica('#abertura');
 		// Escurecimento Tela CSS JS
 		let contShadow = 0;
  		let tela = document.getElementById('telaInicial');
@@ -169,16 +645,28 @@
  			} else {
  		tela.style.boxShadow = 'inset 0 0 0 1000px rgba(0,0,0,'+contShadow+')';
  		contShadow += 0.01;
- 		}}, 100);
+ 		}}, 70);
 	
  		setTimeout(()=>{
- 				piscarElemento(document.querySelector('.startButton'), 1000);
+ 				piscarElemento(document.querySelector('.startButton'), 400);
  		},2000);
 	}
 
 	function introducao(){
-		document.querySelector('.audio').pause();
-		document.getElementById('telaInicial').style.display = 'none';
+
+		pausarAudios('#abertura');
+		loopMusica('#introdução');
+		proximoDiv('telaInicial', 'introducao');
+		escreverDevagar('textoIntrodução', 50, textoIntrodução1);			
+		
+	}
+
+	function escolhaPersonagem(){
+		pausarAudios('#nzoth');
+		loopMusica('#escolheChar');
+		proximoDiv('introducao','escolhaPersonagem');
+
+
 	}
 
 
