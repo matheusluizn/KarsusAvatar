@@ -56,10 +56,11 @@ Os pactos são feitos juntamente com entidades extremamente poderosas denominadas
 					Cap 1: Apresentação da trama e seleção de personagem e pacto.
 
 Nossa jornada começa no império magocrático de Netheril, uma cidade Flutuante que existe acima do continente de Faerûm.
-É uma cidade altamente segregada, onde magos e não magos habitam em locais completamente diferentes.
+A cada 10 anos um campeonato de magia ocorre ma cidade, para que a hierarquia se mantenha firme e os magos poderosos provem seu poder.
 
-Ela é separada geográficamente pelos distritos de Alta Neteril (Parte onde os magos mais poderosos e influentes habitam) e 
-Baixa Netheril (Onde os seres sem magia e os magos iniciantes vivem).
+
+
+
 
 
 

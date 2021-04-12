@@ -379,6 +379,7 @@ function create_progress(elem)
 	// the progress itself
 	var progress = RPGUI.create_element("div");
 	RPGUI.add_class(progress, "rpgui-progress-fill");
+	progress.id = 'barrinha';
 	track.appendChild(progress);
 
 	// set color
@@ -1025,3 +1026,4 @@ RPGUI.insert_after = function(to_insert, after_element)
     after_element.parentNode.insertBefore(to_insert, after_element.nextSibling);
 };
 return RPGUI;})();
+

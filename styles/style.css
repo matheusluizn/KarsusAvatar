@@ -1,0 +1,226 @@
+@font-face{
+		font-family:'Gamefont';
+		src:url('./assets/gameFont1.ttf');
+		text-shadow: 2px 2px 2px 2px green;
+	}
+
+	*{
+		padding:0;
+		margin:0;
+	}
+
+
+	.tela {
+		min-height:100vh;
+	}
+
+	#identificação{
+		background-color:black;
+		color:white;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+	}
+
+	#identificação h1, h3{
+		font-size: 1.5vw;
+
+	}
+
+	#identificação form{
+		display:flex;
+		flex-direction:column;
+	}
+
+		#identificação button{
+			color:white;
+			text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+		}
+
+	/* TELA INICIAL DE PRESS START */
+	#telaInicial{
+		display:none;
+		background-image:url('../img/startScreen.jpg');
+		background-size:cover;
+		background-position:center;
+		background-repeat: no-repeat;
+		justify-content:space-between;
+
+		flex-direction:column;
+		align-items:center;
+	}
+
+	#telaInicial div{
+		text-align:center;
+	}
+
+	#telaInicial img{
+		margin-top:5vw;
+		width:50vw;
+		background-color:rgba(0,0,0,0.0);
+		border-radius:0;
+		padding:0 ;
+
+	}
+
+	.startButton{
+		background:none;
+		border:none;
+		color:white;
+		text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+		padding: 5vw;
+	}
+	.startButton{
+		cursor:auto;
+	}
+
+	/* TELA INICIAL DE INTRODUÇÃO */
+	#introducao{
+		display:none;
+		background-image:url('../img/introImgs/toril.jpg');
+		background-size:cover;
+		background-position:center;
+		background-repeat: no-repeat;
+		background-color:black;
+		flex-direction:column;
+		justify-content:space-between;
+		align-items:center;
+	}
+
+	.textCase{
+		margin-top:5vh;
+		width:100%;
+		height:100%;
+		position:bottom;
+		align-items:center;
+
+		display:flex;
+		justify-content:space-around;
+		
+	}
+
+	.textBox{
+		min-width:100%;
+		max-width:100%;
+		min-height:15vw;
+		font-size:13px;
+	}
+
+	.telaIntrodução{
+		min-height:60%;
+		align-items:center;
+		display:flex;
+		justify-content:space-around;
+	}
+
+	.imgIntro{
+		width:80%;
+		border-radius:50px;
+	}
+
+
+
+
+
+	#escolhaPersonagem{
+		display:none;
+		flex-direction:column;
+		align-items:center;
+		background-image:url('../img/introImgs/charSelect.jpg');
+		background-size:cover;
+		background-repeat: no-repeat;
+
+	}
+
+
+	
+
+	.caixaPersonagem{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		
+	}
+
+	.caixaPersonagem div{
+		text-align:center;
+		margin: 0 20vw;
+	}
+
+	.caixaPersonagem table{
+		margin: 0 5vw;
+	}
+
+	
+
+	.escolhendoChar{
+		display:flex;
+		justify-content:center;
+
+	}
+
+	.personagem{
+		display:flex;
+		
+	}
+	.card{
+		height:40vw;
+		width:60vw;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		border-right:solid 3px black;
+	}
+
+	.card h1{
+		font-size: 15px;
+
+	}
+
+	.card p{
+		font-size: 10px;
+		text-align:center;
+	}
+
+	#imgChar{
+		width: 180px !important;
+		border: 7px solid green;
+		border-radius: 100%;
+	}
+
+	#imgChar2{
+		width: 180px !important;
+		border: 7px solid blue;
+		border-radius: 100%;
+	}
+
+	#imgChar3{
+		width: 180px !important;
+		border: 7px solid red;
+		border-radius: 100%;
+	}
+
+	.tabelaChar{
+		
+		color:white;
+		text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+		float:left;
+		position:static !important;
+		align-items:center;
+	}
+
+	.botaoChar button{
+		color:white;
+		text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	}
+
+
+
+	.zion{
+		display:none;
+	}
+
+	.abigail{
+		display:none;
+	}

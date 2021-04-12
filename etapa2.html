@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" lang="pt_BR">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png"> 
+  	<link href="./dist/rpgui.css" rel="stylesheet" type="text/css">
+	
+
+	<title>Jogar | O Avatar de Karsus</title>
+
+	<link rel="stylesheet" type="text/css" href="./styles/midgame.css">
+</head>
+
+<body>
+	<div class="rpgui-content tela inicioTorneio">
+
+	    <div class="textoBatalha">
+			<h1 id> Batalhe com o mago inimigo:</h1>
+			<h1 id="TituloBatalha"></h1>
+		</div>
+		
+		<div class="backgroundTela">
+			
+			<div id='barraInimigo' class="personagemVida">
+			<div>
+				<progress id="hp1" ></progress>
+				<p style='text-align: center;' id='hpEnemy'></p>
+			</div>
+
+
+			<img id='enemyImg' src="./img/gizem3.gif" alt="Gizem">
+			</div>
+		</div>
+		
+		<div style="display: flex; ">
+		<div class="rpgui-container framed-golden" style="height:110px ;width:350px ; position: static ; display: flex">
+			<div>
+			<progress id="hp2" style="padding-top: 10px;" ></progress>
+			<div id='hpChar'></div>
+			<p id="nomeChar"></p>
+			</div>
+
+			<button class="atack rpgui-button" onclick="escolherAtaque()">Atacar</button>
+			
+		</div>
+		<div style='position: static; height:110px; width:800px ;' class="rpgui-container framed textBox">
+			 <p id="comentarios">Clique no botão Atacar e escolha seu golpe!</p> 
+		</div>
+	</div>
+		 
+
+	</div>
+
+	<script src="./js_components/midgame.js"></script>
+	<script src="./dist/rpgui.js"></script>
+</body>
+</html>
+
+
