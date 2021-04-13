@@ -182,8 +182,7 @@ function next(){
 		pausarAudios('#abertura');
 		loopMusica('#introdução');
 		proximoDiv('telaInicial', 'introducao');
-		escreverDevagar('textoIntrodução', 50, textoIntrodução1);			
-		
+		escreverDevagar('textoIntrodução', 50, textoIntrodução1);
 	}
 
 	function escolhaPersonagem(){
