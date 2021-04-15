@@ -12,7 +12,7 @@ var listaChar = ['electra','abigail','zion'];
 
 	var textoIntrodução1 = 'Seja bem vindo ao planeta Toril, '+ window.localStorage.getItem('nome')+'. Nós, habitantes desse universo estamos sofrendo bastante. Eu, criador deste universo, prevejo uma crise eminente gerada pela ganância de um homem. Esse ser está tentando mexer com o tecido mágico que compõe toda a energia vital dos seres vivos de nosso universo.';
 
-	var textoIntrodução2 = 'Este homem é um Archimago, e deseja utilizar todo o conhecimento escondido na cidade de Netheril para roubar os poderes dos deuses e se tornar o mago mais poderoso do mundo.'
+	var textoIntrodução2 = 'Este homem é um Arquimago, e deseja utilizar todo o conhecimento escondido na cidade de Netheril para roubar os poderes dos deuses e se tornar o mago mais poderoso do mundo.'
 	//var textoIntrodução2 = 'Pactos podem ocorrer por necessidade, fome de conhecimento ou por poderes herdados hereditariamente.';
 
 	var textoIntrodução3 = 'Para combater esse ser maligno convoquei-lhe e selecionei 3 bruxos altamente poderosos para que sejam guiados por você.';
@@ -31,10 +31,12 @@ var listaChar = ['electra','abigail','zion'];
 
 	var textoNzoth5 = 'Netheril é uma cidade flutuante que se situa no norte do continente de Faerûm.';
 
-	var textoNzoth6 = 'Nessa cidade existem hierarquias que são definidas pelas suas habilidades em magia, e vários magos prepotentes disputam em combates até chegar ao topo. O campeão permanente e dono da cidade é o Archimago Karsus.';
+	var textoNzoth6 = 'Nessa cidade existem hierarquias que são definidas pelas suas habilidades em magia, e a cada 4 anos um torneio de batalha mágica é promovido para que os magos podersos mostrem sua força.';
 
-	var textoNzoth7 = 'Karsus é um ser humano extremamente formidável, e está utilizando todo o ouro gerado pela cidade para criar um feitiço capaz de robar o poder dos deuses. Para manter a hierarquia firme ele promove batalhas de magia sazonalmente, e é aí que o seu papel se desenvolve.';
-	var textoNzoth8 = window.localStorage.getItem('nome')+', sua missão é se infiltrar neste torneio e derrotar o grande mago Karthus. Ao derrotá-lo. Você terá em seu arsenal 3 de meus lacaios bruxos mais devotos, e assim poderá pedir meu auxílio sempre quando necessário.'; 
+	var textoNzoth7 = 'Karsus é um ser humano extremamente formidável, e está utilizando todo o ouro gerado pelo torneio para criar um feitiço capaz de roubar o poder dos deuses. Por isso precisamos de você para entrar no torneio e derrotar todos os lacaios de Karsus.';
+
+	var textoNzoth8 = window.localStorage.getItem('nome')+', sua missão é se infiltrar neste torneio e derrotar o grande mago Karshus. Ao derrotá-lo. Você terá em seu arsenal 3 de meus lacaios bruxos mais devotos, e assim poderá pedir meu auxílio sempre quando necessário.'; 
+	
 	var textoNzoth9 = 'A seguir escolha entre os bruxos Abigail, Zion e Electra. Os 3 são bruxos formidáveis e com sua ajuda poderão dar conta de qualquer serviço, mas cuidado, cada um carrega uma arma especial e característica diferente. Escolha Sabiamente!';
 
 
@@ -77,7 +79,7 @@ var listaChar = ['electra','abigail','zion'];
 	var intervalow = setInterval(()=>{
 		if(!ts.length){
 			clearInterval(intervalow)
-			setTimeout(()=>{d.innerHTML = ''; return next();}, 4000);
+			setTimeout(()=>{d.innerHTML = ''; return next();}, 5000);
 		} else{
 			var char = ts.shift();
 			d.innerHTML += char;
@@ -87,34 +89,34 @@ var listaChar = ['electra','abigail','zion'];
 function next(){
 	textoCont++;
 	if (textoCont == 1){
-		escreverDevagar('textoIntrodução', 20, textoIntrodução2)
+		escreverDevagar('textoIntrodução', 15, textoIntrodução2)
 	} else if (textoCont == 2){
-		escreverDevagar('textoIntrodução', 20, textoIntrodução3)
+		escreverDevagar('textoIntrodução', 15, textoIntrodução3)
 	} else if (textoCont == 3){
-		escreverDevagar('textoIntrodução', 20,textoIntrodução4)
+		escreverDevagar('textoIntrodução', 15,textoIntrodução4)
 	} else if (textoCont == 4){
-		escreverDevagar('textoIntrodução', 20,textoIntrodução5)
+		escreverDevagar('textoIntrodução', 15,textoIntrodução5)
 	} else if (textoCont == 5){
 		pausarAudios('#introdução');
 		loopMusica('#nzoth');
 		document.getElementById('introducao').style.backgroundImage = "url('./img/introImgs/deuspolvo.jpg')";
-		escreverDevagar('textoIntrodução', 20,textoNzoth1);
+		escreverDevagar('textoIntrodução', 15,textoNzoth1);
 	} else if (textoCont == 6){
-		escreverDevagar('textoIntrodução', 20,textoNzoth2)
+		escreverDevagar('textoIntrodução', 15,textoNzoth2)
 	} else if (textoCont == 7){
-		escreverDevagar('textoIntrodução', 20,textoNzoth3)
+		escreverDevagar('textoIntrodução', 15,textoNzoth3)
 	} else if (textoCont == 8){
-		escreverDevagar('textoIntrodução', 20,textoNzoth4)
+		escreverDevagar('textoIntrodução', 15,textoNzoth4)
 	} else if (textoCont == 9){
-		escreverDevagar('textoIntrodução', 20,textoNzoth5)
+		escreverDevagar('textoIntrodução', 15,textoNzoth5)
 	} else if (textoCont == 10){
-		escreverDevagar('textoIntrodução', 20,textoNzoth6)
+		escreverDevagar('textoIntrodução', 15,textoNzoth6)
 	} else if (textoCont == 11){
-		escreverDevagar('textoIntrodução', 20,textoNzoth7)
+		escreverDevagar('textoIntrodução', 15,textoNzoth7)
 	} else if (textoCont == 12){
-		escreverDevagar('textoIntrodução', 20,textoNzoth8)
+		escreverDevagar('textoIntrodução', 15,textoNzoth8)
 	} else if (textoCont == 13){
-		escreverDevagar('textoIntrodução', 20,textoNzoth9)
+		escreverDevagar('textoIntrodução', 15,textoNzoth9)
 	} else if (textoCont == 14){
 		escolhaPersonagem();
 	}
@@ -181,7 +183,7 @@ function next(){
 		pausarAudios('#abertura');
 		loopMusica('#introdução');
 		proximoDiv('telaInicial', 'introducao');
-		escreverDevagar('textoIntrodução', 20, textoIntrodução1);
+		escreverDevagar('textoIntrodução', 15, textoIntrodução1);
 	}
 
 	function escolhaPersonagem(){

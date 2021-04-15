@@ -75,6 +75,10 @@ function desligarBotao(){
 	}, 3000)
 }
 
+function loopMusica(id){
+	document.querySelector(id).loop = 'true';
+	document.querySelector(id).play();
+}
 
 
 

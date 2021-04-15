@@ -22,6 +22,7 @@ document.getElementById('hpEnemy').appendChild(hp2);
 
 //Função atacar
 function escolherAtaque(){
+	loopMusica("#batalhaSong")
     desligarBotao();
 	var escolha = prompt(`Escolha o número do seu ataque, ${window.localStorage.getItem('nome')}`);
 	
