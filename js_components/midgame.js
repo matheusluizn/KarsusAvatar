@@ -24,7 +24,7 @@ document.getElementById('hpEnemy').appendChild(hp2);
 function escolherAtaque(){
 	loopMusica('#batalhaSong');
     desligarBotao();
-	var escolha = prompt(`Escolha o número do seu ataque, ${window.localStorage.getItem('nome')}`);
+	var escolha = prompt(`Escolha o número do seu ataque de 1 a 4, ${window.localStorage.getItem('nome')}`);
 	
     if (escolha == 1){
 		ataque(principal.habilidades[0], principal, inimigo);
@@ -56,7 +56,8 @@ function vitoria(){
 function derrota(){
     hp1.innerHTML = `0/${principal.fullhp}`;
     alert(`Você foi derrotado, ${capitalize(localStorage.getItem('nome'))}!`);
-    location.replace('index.html');
+	window.localStorage.setItem('end','l');
+    location.replace('final.html');
 };
 
 

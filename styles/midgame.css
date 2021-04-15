@@ -103,6 +103,14 @@ height: 29vw;
  bottom:0;
 }
 
+#enemyImg2{
+
+    margin: 0 auto;
+    width: 50vw;
+    height: 29vw;
+     bottom:0;
+    }
+
 #TituloBatalha{
 font-size: 30px;
 }
@@ -120,4 +128,34 @@ align-items: center;
 
 #hp1{
 padding:15px 20vw 30px 15vw;
+}
+
+#true{
+    
+    background-color: black;
+    background-image: url('../img/trueEnding.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+#false{
+display: none;
+background-color: black;
+background-image: url('../img/morreu.jpg');
+background-repeat: no-repeat;
+background-size: contain;
+background-position: top;
+}
+
+#trueEnding{
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    text-align: center;
 }

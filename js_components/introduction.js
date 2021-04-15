@@ -49,23 +49,29 @@ var listaChar = ['electra','abigail','zion'];
 
 	//BOTAO ESCOLHER PERSONAGEM
 	function escolherChar(){
+		while(true){
 		var char = prompt('Escolha entre os bruxos 1, 2 ou 3! Você também pode digitar o nome deles')
 		if (char == 1){
 			window.localStorage.setItem('char', 'electra')
 			window.location.replace("etapa2.html")
+			break
 		}else  if (char == 2){
 			window.localStorage.setItem('char', 'abigail')
 			window.location.replace("etapa2.html")
+			break
 		} else  if (char == 3){
 			window.localStorage.setItem('char', 'zion')
 			window.location.replace("etapa2.html")
+			break
 		} else if(typeof char == 'string'){
 			  if(listaChar.includes(char.toLowerCase())){ 
 					window.localStorage.setItem('char',char.toLowerCase())
 					window.location.replace("etapa2.html");
+					break
 				} else alert('Você digitou errado! Por favor digite novamente o bruxo escolhido!')
 		} else{
 			alert('Você digitou errado! Por favor digite novamente o bruxo escolhido!')
+		}
 		}
 	}
 
@@ -89,34 +95,34 @@ var listaChar = ['electra','abigail','zion'];
 function next(){
 	textoCont++;
 	if (textoCont == 1){
-		escreverDevagar('textoIntrodução', 15, textoIntrodução2)
+		escreverDevagar('textoIntrodução', 17, textoIntrodução2)
 	} else if (textoCont == 2){
-		escreverDevagar('textoIntrodução', 15, textoIntrodução3)
+		escreverDevagar('textoIntrodução', 17, textoIntrodução3)
 	} else if (textoCont == 3){
-		escreverDevagar('textoIntrodução', 15,textoIntrodução4)
+		escreverDevagar('textoIntrodução', 17,textoIntrodução4)
 	} else if (textoCont == 4){
-		escreverDevagar('textoIntrodução', 15,textoIntrodução5)
+		escreverDevagar('textoIntrodução', 17,textoIntrodução5)
 	} else if (textoCont == 5){
 		pausarAudios('#introdução');
 		loopMusica('#nzoth');
 		document.getElementById('introducao').style.backgroundImage = "url('./img/introImgs/deuspolvo.jpg')";
-		escreverDevagar('textoIntrodução', 15,textoNzoth1);
+		escreverDevagar('textoIntrodução', 17,textoNzoth1);
 	} else if (textoCont == 6){
-		escreverDevagar('textoIntrodução', 15,textoNzoth2)
+		escreverDevagar('textoIntrodução', 17,textoNzoth2)
 	} else if (textoCont == 7){
-		escreverDevagar('textoIntrodução', 15,textoNzoth3)
+		escreverDevagar('textoIntrodução', 17,textoNzoth3)
 	} else if (textoCont == 8){
-		escreverDevagar('textoIntrodução', 15,textoNzoth4)
+		escreverDevagar('textoIntrodução', 17,textoNzoth4)
 	} else if (textoCont == 9){
-		escreverDevagar('textoIntrodução', 15,textoNzoth5)
+		escreverDevagar('textoIntrodução', 17,textoNzoth5)
 	} else if (textoCont == 10){
-		escreverDevagar('textoIntrodução', 15,textoNzoth6)
+		escreverDevagar('textoIntrodução', 17,textoNzoth6)
 	} else if (textoCont == 11){
-		escreverDevagar('textoIntrodução', 15,textoNzoth7)
+		escreverDevagar('textoIntrodução', 17,textoNzoth7)
 	} else if (textoCont == 12){
-		escreverDevagar('textoIntrodução', 15,textoNzoth8)
+		escreverDevagar('textoIntrodução', 17,textoNzoth8)
 	} else if (textoCont == 13){
-		escreverDevagar('textoIntrodução', 15,textoNzoth9)
+		escreverDevagar('textoIntrodução', 17,textoNzoth9)
 	} else if (textoCont == 14){
 		escolhaPersonagem();
 	}
@@ -183,7 +189,7 @@ function next(){
 		pausarAudios('#abertura');
 		loopMusica('#introdução');
 		proximoDiv('telaInicial', 'introducao');
-		escreverDevagar('textoIntrodução', 15, textoIntrodução1);
+		escreverDevagar('textoIntrodução', 17, textoIntrodução1);
 	}
 
 	function escolhaPersonagem(){

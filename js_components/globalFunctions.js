@@ -2,15 +2,15 @@
 var charList = ['electra', 'abigail', 'zion'];
 
 var charStats = [
-	['electra', [40, 70, 60, 30], [['Golpe nas Sombras', 12], ['Flecha Amaldiçoada', 13], ['Vitalidade Sombria', 10], ['Velocidade Inalcançável: Sandálias de Hermes', 0]]],
-	['abigail', [30, 50, 90, 30], [['Bola de Fogo', 10], ['Chamas Negras', 10], ['Meteoro das Sombras', 10], ['Golpe Furtivo: Capa da Invisibilidade', 0]]],
-	['zion', [80, 40, 40, 40], [['Golpe Sombrio', 10], ['Sifão da Morte', 10], ['Pacto Sombrio', 10], ['Lâmina Arrebatadora: Excalibur', 10]]]
+	['electra', [40, 70, 60, 30], [['Golpe nas Sombras', 25], ['Flecha Amaldiçoada', 25], ['Vitalidade Sombria', 10], ['Velocidade Inalcançável: Sandálias de Hermes', 0]]],
+	['abigail', [30, 50, 90, 30], [['Bola de Fogo', 10], ['Chamas Negras', 10], ['Meteoro das Sombras', 40], ['Golpe Furtivo: Capa da Invisibilidade', 0]]],
+	['zion', [80, 40, 40, 40], [['Golpe Sombrio', 20], ['Sifão da Morte', 10], ['Pacto Sombrio', 10], ['Lâmina Arrebatadora: Excalibur', 40]]]
 ]
 
 var enemyStats = [
-	['gizem', [50, 10, 70, 40], [['Golpe nas Sombras', 10], ['Flecha Amaldiçoada', 10], ['Ultimo Suspiro', 10]]],
-	["kael'thas", [60, 10, 80, 20], [['Míssil Arcano', 10], ['Míssil Arcano', 10], ['Míssil Arcano', 10]]],
-	['karsus', [80, 50, 100 + 20, 10], [['Golpe Multidimencional', 10], ['Buraco Negro', 10], ['Míssil Arcano', 10]]]
+	['gizem', [50, 10, 70, 40], [['Golpe nas Sombras', 10], ['Flecha Amaldiçoada', 10], ['Ultimo Suspiro', 20]]],
+	["kael'thas", [60, 10, 80, 20], [['Tentaculo Mágico', 20], ['Míssil Arcano', 10], ['Míssil Arcano', 20]]],
+	['karsus', [130, 50, 100 + 20, 10], [['Golpe Multidimencional', 15], ['Buraco Negro', 20], ['Míssil Arcano', 10]]]
 ]
 
 // Criando stats dos personagens

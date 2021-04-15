@@ -25,7 +25,7 @@ document.getElementById('hpEnemy').appendChild(hp2);
 function escolherAtaque(){
 	loopMusica('#batalhaSong');
 	desligarBotao();
-	var escolha = prompt(`Escolha o número do seu ataque, ${window.localStorage.getItem('nome')}`);
+	var escolha = prompt(`Escolha o número do seu  de 1 a 4, ${window.localStorage.getItem('nome')}`);
 	if (escolha == 1){
 		ataque(principal.habilidades[0], principal, inimigo);
 		setTimeout(ataque,2000,inimigo.habilidades[1], inimigo, principal);
@@ -49,11 +49,12 @@ function vitoria(){
     hp2.innerHTML = `0/${inimigo.fullhp}`;
     alert(`Parabéns! Você venceu Kael'Thas, ${capitalize(localStorage.getItem('nome'))}`);
     alert('Prepare-se para enfrentar Karsus, o mago!');
+	alert('Muito cuidado, o mundo já está sendo afetado pela ganância de Karsus por poder divino. Salve-nos!')
     location.replace('finalBattle.html');
 };
 
 function derrota(){
     hp1.innerHTML = `0/${principal.fullhp}`;
-    alert(`Você foi derrotado, ${capitalize(localStorage.getItem('nome'))}!`);
-    location.replace('index.html');
+    alert(`Você foi derrotado, ${capitalize(localStorage.getItem('nome'))}! Volte no tempo e escolha seu destino corretamente`);
+    location.replace('final.html');
 };
