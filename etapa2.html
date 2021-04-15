@@ -6,7 +6,7 @@
   	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png"> 
   	<link href="./dist/rpgui.css" rel="stylesheet" type="text/css">
 	
-	
+	  <script src="./js_components/globalFunctions.js"></script>
 
 	<title>Jogar | O Avatar de Karsus</title>
 
@@ -29,8 +29,7 @@
 				<p style='text-align: center;' id='hpEnemy'></p>
 			</div>
 
-
-			<img id='enemyImg' src="./img/gizem3.gif" alt="Gizem">
+			<script> document.write('<img id="enemyImg" src="./img/gizem3.gif" alt="Gizem">') </script>
 			</div>
 		</div>
 		
@@ -42,7 +41,7 @@
 			<p id="nomeChar"></p>
 			</div>
 
-			<button class="atack rpgui-button" onclick="escolherAtaque()">Atacar</button>
+			<button class="atack rpgui-button" id='botaoAtaque' onclick="escolherAtaque()">Atacar</button>
 			
 		</div>
 		<div style='position: static; height:110px; width:800px ;' class="rpgui-container framed textBox">
@@ -50,9 +49,9 @@
 		</div>
 	  </div>
 	</div>
-
 	
-	<script src="./js_components/globalFunctions.js"></script>
+	<audio class="audio" id="escolheChar" src="./assets/musicas/batalha2.mp3"></audio>
+
 	<script src="./js_components/midgame.js"></script>
 	<script src="./dist/rpgui.js"></script>
 </body>

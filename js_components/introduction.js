@@ -83,39 +83,38 @@ var listaChar = ['electra','abigail','zion'];
 			d.innerHTML += char;
 		}
 	}, intervalo);
-	
 }
 function next(){
 	textoCont++;
 	if (textoCont == 1){
-		escreverDevagar('textoIntrodução', 70, textoIntrodução2)
+		escreverDevagar('textoIntrodução', 20, textoIntrodução2)
 	} else if (textoCont == 2){
-		escreverDevagar('textoIntrodução', 70, textoIntrodução3)
+		escreverDevagar('textoIntrodução', 20, textoIntrodução3)
 	} else if (textoCont == 3){
-		escreverDevagar('textoIntrodução', 70,textoIntrodução4)
+		escreverDevagar('textoIntrodução', 20,textoIntrodução4)
 	} else if (textoCont == 4){
-		escreverDevagar('textoIntrodução', 70,textoIntrodução5)
+		escreverDevagar('textoIntrodução', 20,textoIntrodução5)
 	} else if (textoCont == 5){
 		pausarAudios('#introdução');
 		loopMusica('#nzoth');
 		document.getElementById('introducao').style.backgroundImage = "url('./img/introImgs/deuspolvo.jpg')";
-		escreverDevagar('textoIntrodução', 70,textoNzoth1);
+		escreverDevagar('textoIntrodução', 20,textoNzoth1);
 	} else if (textoCont == 6){
-		escreverDevagar('textoIntrodução', 70,textoNzoth2)
+		escreverDevagar('textoIntrodução', 20,textoNzoth2)
 	} else if (textoCont == 7){
-		escreverDevagar('textoIntrodução', 70,textoNzoth3)
+		escreverDevagar('textoIntrodução', 20,textoNzoth3)
 	} else if (textoCont == 8){
-		escreverDevagar('textoIntrodução', 70,textoNzoth4)
+		escreverDevagar('textoIntrodução', 20,textoNzoth4)
 	} else if (textoCont == 9){
-		escreverDevagar('textoIntrodução', 70,textoNzoth5)
+		escreverDevagar('textoIntrodução', 20,textoNzoth5)
 	} else if (textoCont == 10){
-		escreverDevagar('textoIntrodução', 70,textoNzoth6)
+		escreverDevagar('textoIntrodução', 20,textoNzoth6)
 	} else if (textoCont == 11){
-		escreverDevagar('textoIntrodução', 70,textoNzoth7)
+		escreverDevagar('textoIntrodução', 20,textoNzoth7)
 	} else if (textoCont == 12){
-		escreverDevagar('textoIntrodução', 70,textoNzoth8)
+		escreverDevagar('textoIntrodução', 20,textoNzoth8)
 	} else if (textoCont == 13){
-		escreverDevagar('textoIntrodução', 70,textoNzoth9)
+		escreverDevagar('textoIntrodução', 20,textoNzoth9)
 	} else if (textoCont == 14){
 		escolhaPersonagem();
 	}
@@ -170,7 +169,7 @@ function next(){
  			} else {
  		tela.style.boxShadow = 'inset 0 0 0 1000px rgba(0,0,0,'+contShadow+')';
  		contShadow += 0.01;
- 		}}, 70);
+ 		}}, 20);
 	
  		setTimeout(()=>{
  				piscarElemento(document.querySelector('.startButton'), 400);
@@ -182,7 +181,7 @@ function next(){
 		pausarAudios('#abertura');
 		loopMusica('#introdução');
 		proximoDiv('telaInicial', 'introducao');
-		escreverDevagar('textoIntrodução', 50, textoIntrodução1);
+		escreverDevagar('textoIntrodução', 20, textoIntrodução1);
 	}
 
 	function escolhaPersonagem(){
