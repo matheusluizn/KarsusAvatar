@@ -49,8 +49,23 @@ function escolherAtaque(){
 function vitoria(){
     hp2.innerHTML = `0/${inimigo.fullhp}`;
     alert(`Parabéns! Você venceu Gizem, ${capitalize(localStorage.getItem('nome'))}`);
-    alert('Prepare-se para enfrentar um inimigo mais poderoso!');
-    location.replace('etapa3.html');
+    while(true){
+		let e = prompt('Agora você vê uma encruzilhada, um caminho com uma placa apresentando o som Hai e outra com Iie. Qual você entra?');
+		e.toLowerCase();
+		if(e == 'Hai'){
+		alert('Você encontra uma arena com o próximo inimigo!')
+		location.replace('etapa3.html');
+		break
+		} else if( e == 'Iie'){
+			alert('Você cai em uma masmorra e sente seus ossos se quebrando!')
+			window.localStorage.setItem('end','l');
+    		location.replace('final.html');
+			break
+		} else{
+			alert('Você escreveu errado! Tente novamente!')
+		}
+	}
+	
 };
 
 function derrota(){

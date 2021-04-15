@@ -48,6 +48,22 @@ function escolherAtaque(){
 function vitoria(){
     hp2.innerHTML = `0/${inimigo.fullhp}`;
     alert(`Parabéns! Você venceu Kael'Thas, ${capitalize(localStorage.getItem('nome'))}`);
+	while(true){
+		let e = prompt('Agora você vê uma encruzilhada, um caminho com uma placa apresentando o som Oui e outra com Nom. Qual você entra?');
+		e.toLowerCase();
+		if(e == 'Oui'){
+		alert('Você encontra uma arena com o próximo inimigo!')
+		location.replace('etapa3.html');
+		break
+		} else if( e == 'Nom'){
+			alert('Você cai em uma armadilha e quebra o braço!')
+			window.localStorage.setItem('end','l');
+    		location.replace('final.html');
+			break
+		} else{
+			alert('Você escreveu errado! Tente novamente!')
+		}
+	}
     alert('Prepare-se para enfrentar Karsus, o mago!');
 	alert('Muito cuidado, o mundo já está sendo afetado pela ganância de Karsus por poder divino. Salve-nos!')
     location.replace('finalBattle.html');
