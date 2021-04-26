@@ -2,9 +2,9 @@
 var charList = ['electra', 'abigail', 'zion'];
 
 var charStats = [
-	['electra', [40, 70, 60, 30], [['Golpe nas Sombras', 25], ['Flecha Amaldiçoada', 25], ['Vitalidade Sombria', 10], ['Velocidade Inalcançável: Sandálias de Hermes', 0]]],
+	['electra', [40, 70, 60, 30, 40*20], [['Golpe nas Sombras', 25], ['Flecha Amaldiçoada', 25], ['Vitalidade Sombria', 10], ['Velocidade Inalcançável: Sandálias de Hermes', 0]]],
 	['abigail', [30, 50, 90, 30], [['Bola de Fogo', 10], ['Chamas Negras', 10], ['Meteoro das Sombras', 40], ['Golpe Furtivo: Capa da Invisibilidade', 0]]],
-	['zion', [80, 40, 40, 40], [['Golpe Sombrio', 20], ['Sifão da Morte', 10], ['Pacto Sombrio', 10], ['Lâmina Arrebatadora: Excalibur', 40]]]
+	['zion', [80, 40, 40, 40], [['Golpe Sombrio', 20], ['Sifão da Morte', 10], ['Pacto Sombrio', 10], ['Lâmina Arrebatadora: Excalibur', 80]]]
 ]
 
 var enemyStats = [
