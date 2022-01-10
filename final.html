@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" lang="pt_BR">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png"> 
+  	<link href="./dist/rpgui.css" rel="stylesheet" type="text/css">
+	
+	  <script src="./js_components/globalFunctions.js"></script>
+      
+
+	<title>Batalha Final | O Avatar de Karsus</title>
+
+	<link rel="stylesheet" type="text/css" href="./styles/midgame.css">
+</head>
+
+	<div id="true" class="rpgui-content tela">
+        <div id="trueEnding">
+        <h2>Muito obrigado</h2>
+        <h1 id="jogador"></h1>
+        <h2>,o tecido mágico de nosso universo foi salvo graças a vocês. Karsus foi derrotado e seus planos malignos foram parados de uma vez por todas </h2>
+        </div>    
+        <audio class="audio" id="vitoria" src="./assets/musicas/good.mp3" controls></audio>
+	</div>
+
+    <div id='false' class="rpgui-content tela">
+
+        <audio class="audio" id="derrota" src="./assets/musicas/dead.mp3"controls></audio>
+	</div>
+
+    <script src="./js_components/final.js"></script>
+	<script src="./dist/rpgui.js"></script>
+</body>
+</html>

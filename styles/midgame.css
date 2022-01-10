@@ -1,0 +1,161 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+.tela{
+ min-height: 100vw;
+
+}
+
+.textBox{
+ height: 10%;
+ width: 70%;
+ background-color: blue;
+
+}
+
+.backgroundTela{
+ height: 34%;
+ width:70%;
+ background-image: url('../img/bgBattle1.gif');
+ background-size:cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ display: flex;
+ align-items:flex-end;
+ justify-content: center;
+ border-radius: 100px 100px 0 0;
+ 
+}
+
+
+.backgroundTela1{
+    height: 34%;
+    width:70%;
+    background-image: url('../img/battleBg2.gif');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    border-radius: 100px 100px 0 0;
+    
+}
+
+.backgroundTela2{
+    height: 34%;
+    width:70%;
+    background-image: url('../img/battleBgKarsus.gif');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    border-radius: 100px 100px 0 0;
+    
+}
+
+.inicioTorneio{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background-image: url('../img/bgLuta.png');
+ background-size:contain;
+ box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.7);
+ background-repeat: no-repeat;
+ align-items: center;
+
+}
+
+.inicioTorneio1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../img/bgLuta2.png');
+     background-size:contain;
+     box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.7);
+     background-repeat: no-repeat;
+     align-items: center;
+    
+ }
+
+ 
+.inicioTorneio2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../img/finalBg.png');
+     background-size:contain;
+     box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.7);
+     background-repeat: no-repeat;
+     align-items: center;
+    
+ }
+
+#enemyImg{
+
+margin: 0 auto;
+width: 24vw;
+height: 29vw;
+ bottom:0;
+}
+
+#enemyImg2{
+
+    margin: 0 auto;
+    width: 50vw;
+    height: 29vw;
+     bottom:0;
+    }
+
+#TituloBatalha{
+font-size: 30px;
+}
+
+
+.rpgui-progress{
+width: 400px;
+}
+
+.personagemVida{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#hp1{
+padding:15px 20vw 30px 15vw;
+}
+
+#true{
+    
+    background-color: black;
+    background-image: url('../img/trueEnding.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+#false{
+display: none;
+background-color: black;
+background-image: url('../img/morreu.jpg');
+background-repeat: no-repeat;
+background-size: contain;
+background-position: top;
+}
+
+#trueEnding{
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    text-align: center;
+}

@@ -4,122 +4,245 @@
 	<meta charset="utf-8" lang="pt_BR">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png"> 
+
+
+  	<link href="./dist/rpgui.css" rel="stylesheet" type="text/css" >
+	<script src="./dist/rpgui.js"></script>
+
 	<title>Iniciando sua Aventura | O Avatar de Karsus</title>
 
-	<link rel="stylesheet" type="text/css" href="./styles/start.css">
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
 
-	<style type="text/css">
-	@font-face{
-		font-family:'Gamefont';
-		src:url('./assets/gameFont1.ttf');
-		text-shadow: 2px 2px 2px 2px green;
-	}
-
-	*{
-		font-family:'Gamefont';
-		padding:0;
-		margin:0;
-	}
-
-
-	.tela {
-		min-height:100vh;
-	}
-
-	#identificação{
-		background-color:black;
-		color:white;
-	}
-
-	/* TELA INICIAL DE PRESS START */
-	#telaInicial{
-		display:none;
-		background-image:url('./img/startScreen.jpg');
-		background-size:cover;
-		justify-content:space-around;
-
-		background-position:center;
-		background-repeat: no-repeat;
-		flex-direction:column;
-		align-items:center;
-	}
-
-	#telaInicial img{
-		width:50vw;
-		background-color:rgba(0,0,0,0.0);
-		border-radius:0;
-		padding:0 ;
-
-	}
-
-	</style>
-
+	
 </head>
 <body>
-	<div id="identificação" class="tela">
-		<form>
-			<h1> Vamos começar sua Aventura!</h1>
+	<div id="identificação" class="tela rpgui-content">
+		
+			<h1> Vamos começar sua aventura em <b style="color:yellow;"> Karsus Avatar</b>!</h1>
 			<h1>Primeiro digite seu nome</h1>
 			<h3>(Esse não será o nome do seu personagem!)</h3>
 
 			<form>
 				<input type="text" id="nomeJogador" name="nomeJogador">
-				<input type="button" Value='Esse é meu nome!' onclick="guardarNome()">
+				<button style="width:100%" class="rpgui-button" type="button" onclick="guardarNome()">Esse é meu nome!</button>
 			</form>
 		</form>
 		
 	</div>
 
-	<div id="telaInicial" class="tela">
 
+
+
+	<div id="telaInicial" class="tela rpgui-content">
+		<div>
+		<p>POR MATHEUS LUIZ® </p>
 		<img src="./img/logo.png">
+		</div>
+
+	
+		<button onclick="introducao()" class="startButton">CLIQUE AQUI PARA COMEÇAR</button>
 		
-		<audio id="abertura" src="./assets/musicas/abertura.mp3"></audio>		
+
+		<audio class="audio" id="abertura" src="./assets/musicas/abertura.mp3"></audio>		
 	</div>
 
-	<div div="introdução">
+
+
+	<div id="introducao" class="tela rpgui-content">
 		
+		<div class="telaIntrodução">
+				<img class="imgIntro">
+		</div>
+
+		<div class="textCase">
+		   <div  class="rpgui-container framed textBox">
+				<p id="textoIntrodução"></p>
+		   </div>
+		</div>
+
+		<audio class="audio" id="nzoth" src="./assets/musicas/yoggSaron.mp3"></audio>
+		<audio class="audio" id="introdução" src="./assets/musicas/introdução.mp3"></audio>
 	</div>
 
-
-<script type="text/javascript">
-
 	
-	function guardarNome(){
+<div id="escolhaPersonagem" class="escolhendoChar rpgui-content">
 
-		let n = document.getElementById('nomeJogador').value;
-	
-		if(n.length == 0){ 
-			console.log('Você não escreveu nada')
-		} else {
-			window.localStorage.setItem('nome', n); 
-			document.getElementById('identificação').style.display = 'none';
-			telaInicial();
-		}
+	<div class="botaoChar">
+			<button onclick="verBruxo('.electra','.abigail','.zion')" class="rpgui-button">Bruxo 1</button>
+			<button onclick="verBruxo('.abigail','.electra','.zion')" class="rpgui-button">Bruxo 2</button>
+			<button onclick="verBruxo('.zion','.abigail','.electra')" class="rpgui-button">Bruxo 3</button>
+			<button onclick="escolherChar()" class="rpgui-button">Quero escolher meu bruxo!</button>
+	</div>
 		
-	}
+	<div class="personagem electra">	
+		<div class="card rpgui-container framed" style="position:static;" >
+			<img id='imgChar' src="./img/personagens/portrait1.png">
+			<h1>Electra Soulton</h1>
+			<p> Electra é uma bruxa que fez o pacto com N'Zoth por questão de sobrevivência. Ela é orfã desde criança, e ao entrar em contato com bruxos que estavam na mesmo situação escolheu seguir o mesmo caminho que seus colegas. Ela cresceu vivendo de forma clandestina e além de desenvolver poderes mágicos evoluiu em agilidade e na utilização de flechas para combate. É uma mulher séria, lógica e altamente vingativa. </p>
+		</div>	
 
-	function telaInicial(){
-		document.getElementById('telaInicial').style.display = 'flex';
-		// Música de Abertura
-		document.getElementById('abertura').loop = 'true';
-		document.getElementById('abertura').play();
-		// Escurecimento Tela CSS JS
-		let contShadow = 0;
- 		let tela = document.getElementById('telaInicial');
- 		var intervalo = setInterval(()=>{
- 		if (contShadow >= 0.8){
- 		tela.style.boxShadow = 'inset 0 0 0 1000px rgba(0,0,0,'+contShadow+')';
- 		clearInterval(intervalo);
- 			} else {
- 		tela.style.boxShadow = 'inset 0 0 0 1000px rgba(0,0,0,'+contShadow+')';
- 		contShadow += 0.01;
- 		}}, 100);
-	}
+		<table class="tabelaChar rpgui-container framed">
+				<tr>
+					<th colspan="2">Stats</th>
+				</tr>
+				<tr>
+				  <td>Força</td>
+				  <td>40</td>
+				</tr>
+				<tr>
+				  <td>Agilidade</td>
+				  <td>70</td>
+				</tr>
+				<tr>
+				  <td>Inteligência</td>
+				  <td>60</td>
+				</tr>
+				<tr>
+				  <td>Sorte</td>
+				  <td>30</td>
+				</tr>
+				<tr>
+					<p></p>
+				</tr>
+				<tr>
+					<th style="padding-top: 20px;" colspan="2">Atributo Principal:</th>
+				</tr>
+				<tr>
+					<th colspan="2" style="color:#7FB800; font-size:20px; padding: 20px 0;" >Agilidade </th>
+				</tr>
+				<tr>
+					<th colspan="2">Artefato do Bruxo:</th>
+				</tr>
+				<tr>
+					<td colspan="2" style="display:flex; justify-content:center; "><img style="width: 80px; padding-top: 20px; " src="./img/personagens/hermes1.png"></td>
+				</tr>
+
+				<tr>
+					<td style="padding-top: 10px;" colspan="2">Sandálias de Hermes</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-top: 10px;" ><p>Uso: Fique invunerável <br> por 2 turnos</p></td>
+				</tr>
+				
+			</table>
+
+		</div>	
 
 
-	
+		<div class="personagem abigail">	
+		<div class="card rpgui-container framed" style="position:static;" >
+			<img id='imgChar2' src="./img/personagens/portrait3.png">
+			<h1>Abigail Labyrinth</h1>
+			<p> Abigail é proveniente de uma família de grandes magos. Seus pais eram arcanistas exímios capazes de controlar com propriedade o elemento do fogo. Abigail seguiu a mesma linha, estudando com muita fome sobre magias e o mundo dos feitiços. Nessa fome de conhecimento, ela acabou conhecendo os bruxos e seu contato com seres de outros planos. Ela então decidiu fazer o pacto com N'Zoth, e desde então presta serviços ao deus em troca de conhecimento. É uma mulher extremamente inteligente, mas é ranzinza e orgulhosa. </p>
+		</div>	
 
+		<table class="tabelaChar rpgui-container framed">
+				<tr>
+					<th colspan="2">Stats</th>
+				</tr>
+				<tr>
+				  <td>Força</td>
+				  <td>30</td>
+				</tr>
+				<tr>
+				  <td>Agilidade</td>
+				  <td>50</td>
+				</tr>
+				<tr>
+				  <td>Inteligência</td>
+				  <td>90</td>
+				</tr>
+				<tr>
+				  <td>Sorte</td>
+				  <td>30</td>
+				</tr>
+				<tr>
+					<p></p>
+				</tr>
+				<tr>
+					<th style="padding-top: 20px;" colspan="2">Atributo Principal:</th>
+				</tr>
+				<tr>
+					<th colspan="2" style="color:blue; font-size:20px; padding: 20px 0;" >Inteligência </th>
+				</tr>
+				<tr>
+					<th colspan="2">Artefato do Bruxo:</th>
+				</tr>
+				<tr>
+					<td colspan="2" style="display:flex; justify-content:center; "><img style="width: 80px; padding-top: 20px; " src="./img/personagens/cloak1.png"></td>
+				</tr>
+
+				<tr>
+					<td style="padding-top: 10px;" colspan="2">Capa da Invisibilidade</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-top: 10px;" ><p>Uso: Fique invunerável <br> por 1 turno e cause<br> dano bônus no próximo ataque</p></td>
+				</tr>
+				
+			</table>
+
+		</div>	
+
+		<div class="personagem zion">	
+		<div class="card rpgui-container framed" style="position:static;" >
+			<img id='imgChar3' src="./img/personagens/portrait2.png">
+			<h1>Zion Jinx</h1>
+			<p> Zion é um rapaz que proveio de família nobre. Seus pais eram aristrocratas altamente renomados e eram reconhecidos em qualquer lugar da cidade onde moravam. Porém, secretamente, eles eram devotos de N'Zoth. Em troca de se tornar fértil, a mãe de Zion fez um pacto que concede a vida do filho como devoto do Patrono dos bruxos. Além de ser um bruxo exímio, ele desenvolveu habilidades com sua espada! É uma pessoa emocional, impulsiva e ingênua. </p>
+		</div>	
+
+		<table class="tabelaChar rpgui-container framed">
+				<tr>
+					<th colspan="2">Stats</th>
+				</tr>
+								<tr>
+				  <td>Força</td>
+				  <td>80</td>
+				</tr>
+				<tr>
+				  <td>Agilidade</td>
+				  <td>40</td>
+				</tr>
+				<tr>
+				  <td>Inteligência</td>
+				  <td>40</td>
+				</tr>
+				<tr>
+				  <td>Sorte</td>
+				  <td>40</td>
+				</tr>
+				<tr>
+					<p></p>
+				</tr>
+				<tr>
+					<th style="padding-top: 20px;" colspan="2">Atributo Principal:</th>
+				</tr>
+				<tr>
+					<th colspan="2" style="color:red; font-size:20px; padding: 20px 0;" >Força</th>
+				</tr>
+				<tr>
+					<th colspan="2">Artefato do Bruxo:</th>
+				</tr>
+				<tr>
+					<td colspan="2" style="display:flex; justify-content:center; "><img style="width: 80px; padding-top: 20px; " src="./img/personagens/excalibur1.png"></td>
+				</tr>
+
+				<tr>
+					<td style="padding-top: 10px;" colspan="2">Excalibur</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-top: 10px;" ><p>Uso: Faça 1 ataque <br> devastador</p></td>
+				</tr>
+				
+			</table>
+
+		</div>	
+
+
+		<audio class="audio" id="escolheChar" src="./assets/musicas/escolheChar.mp3"></audio>
+
+	</div>
+
+<script src="./js_components/introduction.js" type="text/javascript">
 </script>
 
 </body>
